@@ -110,15 +110,29 @@ if (slider) {
   });
 }
 
-// loader when screen uis opened by the visitor
 window.addEventListener("load", () => {
   const loader = document.querySelector(".loader");
+  const cursor = document.querySelector(".custom-cursor");
+
+  // Restore default cursor while loading
+  document.body.style.cursor = "auto";
+
+  if (cursor) {
+    cursor.style.display = "none";
+  }
+
   setTimeout(() => {
     loader.style.opacity = "0";
     loader.style.pointerEvents = "none";
+
+    // Activate custom cursor again
+    document.body.style.cursor = "none";
+
+    if (cursor) {
+      cursor.style.display = "block";
+    }
   }, 1200);
 });
-
 //shrinks navbar when scrolled
 window.addEventListener("scroll", () => {
     const navbar = document.querySelector(".navbar");
