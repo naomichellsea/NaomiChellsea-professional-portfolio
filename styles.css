@@ -271,6 +271,12 @@
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     transform-style: preserve-3d;
   }
+  .project-item h3 {
+    color: #F7F7F9;
+  }
+  .project-item p {
+    color: #C70039;
+  }
   
   .project-item:hover {
     transform: perspective(1000px) rotateX(6deg) rotateY(-6deg) scale(1.02);
