@@ -15,6 +15,11 @@
     line-height: 1.7;
     letter-spacing: 0.2px;
     scroll-padding-top: 100px;
+    overflow-x: hidden;
+    position: relative;
+  }
+  html, body {
+    overflow-x: hidden;
   }
   
   /* HEADINGS */
@@ -242,7 +247,7 @@
   .projectsection-title {
     font-size: 2.8rem;
     font-weight: 600;
-    color: white;
+    color:#9CA0B3;
   }
   .projects-grid {
     display: grid;
@@ -271,12 +276,18 @@
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     transform-style: preserve-3d;
   }
-  .project-item h3 {
-    color: #F7F7F9;
-  }
-  .project-item p {
-    color: #C70039;
-  }
+  .project-item h3{
+    color:#FFFFFF;
+    font-weight:600;
+    letter-spacing:0.3px;
+    margin-bottom:6px;
+    }
+    
+    .project-item p{
+    color:#9CA0B3;
+    font-size:0.95rem;
+    line-height:1.6;
+    }
   
   .project-item:hover {
     transform: perspective(1000px) rotateX(6deg) rotateY(-6deg) scale(1.02);
@@ -285,11 +296,13 @@
   
   /* WORK SECTION */
   
-  .worksection-title {
-    font-size: 2.8rem;
-    font-weight: 600;
-    color: white;
-  }
+  .worksection-title{
+    font-size:2.8rem;
+    font-weight:600;
+    color:#9CA0B3;
+    letter-spacing:-0.5px;
+    margin-bottom:40px;
+    }
 
   .horizontal-scroll {
     display: flex;
@@ -323,6 +336,22 @@
   .project-card:hover {
     border: 1px solid rgba(199,0,57,0.4);
   }
+  .project-card h3{
+    color:#FFFFFF;
+    font-weight:600;
+    letter-spacing:0.3px;
+    margin-bottom:8px;
+  }
+    
+    .project-card p{
+    color:#9CA0B3;
+    font-size:0.95rem;
+    line-height:1.6;
+  }
+
+  
+
+  /* About + achievemnts section  */
   .about-container {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -334,22 +363,61 @@
     font-size: 1.15rem;
     line-height: 1.8;
   }
-  .achievements ul {
+  .achievement-list {
     list-style: none;
+    margin-top: 20px;
     padding: 0;
   }
   
-  .achievements li {
+  .achievement-list li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  
     background: rgba(199,0,57,0.08);
     padding: 12px 18px;
     border-radius: 12px;
     margin-bottom: 12px;
-    transition: 0.3s;
+  
+    transition: 0.3s ease;
   }
   
-  .achievements li:hover {
+  .achievement-list li:hover {
     background: rgba(199,0,57,0.15);
+    transform: translateX(6px);
   }
+  
+  .achievement-list img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+  }
+
+  /* Achievemnts hover */
+  .achievements{
+    position:relative;
+    }
+    
+    .achievement-preview{
+    position:absolute;
+    right:-30vw;
+    top:50%;
+    transform:translateY(-50%);
+    pointer-events:none;
+    }
+    
+    .achievement-preview img{
+    width:350px;
+    border-radius:14px;
+    box-shadow:0 30px 80px rgba(0,0,0,0.5);
+    display:none;
+    }
+    .achievement-list li:hover{
+      background:rgba(199,0,57,0.15);
+      transform:translateX(6px);
+      cursor:pointer;
+      }
+
   .achievements h3,
   .skills h3 {
     margin-bottom: 15px;

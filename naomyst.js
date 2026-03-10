@@ -335,4 +335,32 @@ if (canvas) {
 
   animate();
 
+  // -----------------------------
+// achievements hover
+// -----------------------------
+const achievementItems = document.querySelectorAll(".achievement-list li");
+const previewImage = document.getElementById("achievementImage");
+
+if(previewImage){
+
+achievementItems.forEach(item=>{
+
+item.addEventListener("mouseenter",()=>{
+
+const preview=item.getAttribute("data-preview");
+
+previewImage.src=preview;
+previewImage.style.display="block";
+
+});
+
+item.addEventListener("mouseleave",()=>{
+
+previewImage.style.display="none";
+
+});
+
+});
+
+}
 }
